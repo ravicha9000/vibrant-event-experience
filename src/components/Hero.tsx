@@ -3,22 +3,11 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
-  const navigate = useNavigate();
-  
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
-
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -88,17 +77,10 @@ export const Hero = () => {
           Transform your event with state-of-the-art DJ gear and stunning LED light shows
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-          <Link to="/book-now">
-            <Button size="lg" className="bg-neon-blue text-black hover:bg-neon-blue/80 hover:scale-105 transition-transform">
-              Book Now
-            </Button>
-          </Link>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-white/20 hover:border-neon-pink hover:text-neon-pink transition-colors"
-            onClick={scrollToServices}
-          >
+          <Button size="lg" className="bg-neon-blue text-black hover:bg-neon-blue/80 hover:scale-105 transition-transform">
+            Book Now
+          </Button>
+          <Button size="lg" variant="outline" className="border-white/20 hover:border-neon-pink hover:text-neon-pink transition-colors">
             View Services
           </Button>
         </div>
