@@ -1,21 +1,25 @@
 import { Music, Lightbulb, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageUpload } from "./ImageUpload";
 
 const services = [
   {
     icon: Music,
     title: "DJ Equipment",
     description: "Professional-grade mixers, controllers, and sound systems for any event size",
+    category: "dj" as const,
   },
   {
     icon: Lightbulb,
     title: "LED Lighting",
     description: "Dynamic lighting solutions including moving heads, lasers, and LED walls",
+    category: "led" as const,
   },
   {
     icon: Package,
     title: "Complete Packages",
     description: "All-in-one solutions combining premium DJ gear with stunning light shows",
+    category: "package" as const,
   },
 ];
 
@@ -47,6 +51,19 @@ export const Services = () => {
               </Button>
             </div>
           ))}
+        </div>
+
+        <div className="mt-20 grid md:grid-cols-2 gap-8">
+          <ImageUpload
+            category="dj"
+            title="DJ Equipment Images"
+            description="Upload high-quality images of your DJ equipment"
+          />
+          <ImageUpload
+            category="led"
+            title="LED Lighting Images"
+            description="Share photos of your stunning LED light shows"
+          />
         </div>
       </div>
     </section>
