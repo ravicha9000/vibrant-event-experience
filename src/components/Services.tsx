@@ -1,6 +1,7 @@
 import { Music, Lightbulb, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageUpload } from "./ImageUpload";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -43,12 +44,14 @@ export const Services = () => {
               <service.icon className="w-12 h-12 text-neon-blue mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold mb-2 group-hover:text-neon-blue transition-colors">{service.title}</h3>
               <p className="text-white/70 mb-4">{service.description}</p>
-              <Button 
-                variant="ghost" 
-                className="group-hover:text-neon-blue group-hover:translate-x-2 transition-all duration-300"
-              >
-                Learn More →
-              </Button>
+              <Link to="/gallery">
+                <Button 
+                  variant="ghost" 
+                  className="group-hover:text-neon-blue group-hover:translate-x-2 transition-all duration-300"
+                >
+                  Learn More →
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
