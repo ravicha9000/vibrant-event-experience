@@ -1,27 +1,27 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
       <div className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="text-2xl font-display font-bold text-white">
+        <a href="/" className="text-2xl font-display font-bold text-white">
           PULSE<span className="text-neon-blue">DJ</span>
-        </Link>
+        </a>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/gallery" className="text-white/80 hover:text-white transition-colors">
+          <a href="#services" className="text-white/80 hover:text-white transition-colors">
+            Services
+          </a>
+          <a href="#gallery" className="text-white/80 hover:text-white transition-colors">
             Gallery
-          </Link>
-          <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+          </a>
+          <a href="#contact" className="text-white/80 hover:text-white transition-colors">
             Contact
-          </Link>
-          <Link to="/book-now">
-            <Button className="bg-neon-blue text-black hover:bg-neon-blue/80">
-              Book Now
-            </Button>
-          </Link>
+          </a>
+          <Button className="bg-neon-blue text-black hover:bg-neon-blue/80">
+            Book Now
+          </Button>
         </div>
         
         <Button variant="ghost" size="icon" className="md:hidden">
